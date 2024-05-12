@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <script src="https://kit.fontawesome.com/040eb06c51.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Space+Grotesk&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/profile.css">
+</head>
+
+<body>
+    <div class="mouseCaret"></div>
+
+    <div class="popup">
+        <div class="popup-wraper">
+            <div class="photo-select">
+                <img src="/images/Mugiwara no Luffy.jpg" alt="" data-value="1">
+                <img src="/images/Zoro.jpg" alt="" data-value="2">
+                <img src="/images/Kakashi hatake.jpg" alt="" data-value="3">
+                <img src="/images/Nami.jpg" alt="" data-value="4">
+            </div>
+        </div>
+    </div>
+
+    <nav data-toggled="false" data-transitionable="false">
+        <div class="logo">
+            <div class="logo-name">
+                <a href="/" class="grow-link">Semicolon</a>
+            </div>
+        </div>
+        <div class="nav-mobile-section">
+            <div class="features">
+                <div class="read-link">
+                    <a href="https://semicolon23-j8cl.onrender.com/read" class="grow-link">READ</a>
+                </div>
+                <div class="test-link">
+                    <a href="https://semicolon23-j8cl.onrender.com/test" class="grow-link">TEST</a>
+                </div>
+            </div>
+            <div class="about">
+                <div class="home-link-icon">
+                    <a href="/" class="border-link"><i class="fa-solid fa-house"></i></a>
+                </div>
+                <div class="about-link-icon">
+                    <a href="#" class="border-link" onclick="return false;"><i class="fa-solid fa-circle-info"></i></a>
+                </div>
+                <div class="github-link-icon">
+                    <a href="https://github.com/Amanjot-001/Semicolon" class="border-link"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="profile">
+                <div class="profile-text">
+                    <a href="https://semicolon23-j8cl.onrender.com/logout" class="grow-link">LOGOUT</a>
+                </div>
+            </div>
+        </div>
+        <button id="nav-toggle-btn" type="button" onclick="handleNavToggle()">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <div class="content">
+        <div class="user">
+            <div class="upper">
+                <div class="photo">
+                    <% if (userData.photoNumber===1) { %>
+                        <img src="/images/Mugiwara no Luffy.jpg" alt="profile-icon">
+                        <% } else if (userData.photoNumber===2) { %>
+                            <img src="/images/Zoro.jpg" alt="profile-icon">
+                            <% } else if (userData.photoNumber===3) { %>
+                                <img src="/images/Kakashi hatake.jpg" alt="profile-icon">
+                                <% } else { %>
+                                    <img src="/images/Nami.jpg" alt="profile-icon">
+                                    <% } %>
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+                <div class="user-info">
+                    <div class="name">
+                        <span>
+                            <%= userData.name %>
+                        </span>
+                        <i class="fa-solid fa-pen-to-square name-edit-btn"></i>
+                    </div>
+                    <div class="username">
+                        <%= userData.username %>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="rank">
+                    Rank: <span>#<%= userData.rank %> / <%= totalUsers %></span>
+                </div>
+                <div class="best-score">
+                    Best Score: <span>
+                        <%= userData.bestScore %> wpm
+                    </span>
+                </div>
+                <div class="completed-tests">
+                    Tests Completed: <span>
+                        <%= userData.testsTaken %>
+                    </span>
+                </div>
+                <div class="joined-date">
+                    Member since: <span>
+                        <%= userData.joined %>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <p class="heading"><strong>Leave a review:</strong></p>
+            <div class="text-area">
+                <p>
+                    <% if (!userData.message) { %>
+                        Max 100 chars long
+                        <% } else { %>
+                            <%= userData.message %>
+                                <% } %>
+                </p>
+                <div class="thanks-msg hidden">
+                    <p>Thank You for your Feedback!</p>
+                </div>
+            </div>
+            <div class="btns">
+                <a class="edit" href="#" onclick="return false;">Edit</a>
+                <a class="submit" href="#" onclick="return false;">Submit</a>
+            </div>
+        </div>
+        <div class="graph">
+            <div id="chart_div"></div>
+        </div>
+        <div class="map">
+            <div class="heatmap">
+                <div id="calendar_basic"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/profile.js"></script>
+</body>
+
+</html>

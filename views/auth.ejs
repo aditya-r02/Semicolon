@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="mouseCaret"></div>
+
+    <div class="gradient"></div>
+    <div class="container">
+        <div class="logo-section">
+            <a href="https://semicolon23-j8cl.onrender.com/" class="logo">SEMICOLON</a>
+        </div>
+        <div class="reg-info">
+            <div class="heading">
+                <h1>Welcome Back!</h1>
+            </div>
+            <div class="info-text">
+                <p>Ready to dive back into the action? Sign in and let the excitement unfold.</p>
+            </div>
+            <div class="btn">
+                <button id="singInBtn">Sign In</button>
+            </div>
+        </div>
+        <div class="signIn-info">
+            <div class="heading">
+                <h1>Hello Friend!</h1>
+            </div>
+            <div class="info-text">
+                <p>Get your fingers ready to dance across the keyboard! Sign up and unlock a world of possibilities.</p>
+            </div>
+            <div class="btn">
+                <button id="singUpBtn">Sign Up</button>
+            </div>
+        </div>
+        <div class="info"></div>
+        <div class="signIn">
+            <% if (typeof flag !=='undefined' ) { %>
+                <div class="msg">
+                    <% if (!flag) { %>
+                        Registered Successfully!
+                        <% } else { %>
+                            Username already exists!
+                            <% } %>
+                </div>
+                <% } %>
+                    <% if (typeof flag2 !=='undefined' ) { %>
+                        <div class="msg">
+                            <% if (!flag2) { %>
+                                Incorrect username or password!
+                                <% } %>
+                        </div>
+                        <% } %>
+                            <div class="acc">Create Account</div>
+                            <form action="/register" method="post">
+                                <div class="form-group">
+                                    <label for="regName">Name</label>
+                                    <input type="text" class="name" placeholder="Name" id="regName" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="regUserName">Username</label>
+                                    <input type="text" class="userName" placeholder="Username" id="regUserName"
+                                        name="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="regPass">Password</label>
+                                    <input type="password" class="password" placeholder="Password" id="regPass"
+                                        name="password">
+                                </div>
+                                <button type="submit">Sign Up</button>
+                            </form>
+        </div>
+        <div class="reg">
+            <% if (typeof flag2 !=='undefined' ) { %>
+                <div class="msg">
+                    <% if (!flag2) { %>
+                        Incorrect username or password!
+                        <% } %>
+                </div>
+                <% } %>
+                    <div class="acc">Howdy, Sign In</div>
+                    <form action="/signIn" method="post">
+                        <div class="form-group">
+                            <label for="SigninUserName">Username</label>
+                            <input type="text" class="userName" placeholder="Username" id="SigninUserName"
+                                name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="SigninPass">Password</label>
+                            <input type="password" class="password" placeholder="Password" id="SigninPass"
+                                name="password">
+                        </div>
+                        <button type="submit">Sign In</button>
+                    </form>
+                    <div class="mobile-signIn-btn">
+                        <button>...or Register</button>
+                    </div>
+        </div>
+    </div>
+
+    <script src="/scripts/auth.js"></script>
+</body>
+
+</html>
