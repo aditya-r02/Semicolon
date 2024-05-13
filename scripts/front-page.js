@@ -210,7 +210,7 @@ function getAppliedTheme() {
 
 fetchEverything();
 async function fetchEverything() {
-    await fetch('https://semicolon23-j8cl.onrender.com/everything', {
+    await fetch('https://semicolon.vercel.app/everything', {
         method: "POST",
 
     })
@@ -219,7 +219,7 @@ async function fetchEverything() {
 
 fetchUsers();
 async function fetchUsers() {
-    fetch('https://semicolon23-j8cl.onrender.com/leadborad')
+    fetch('https://semicolon.vercel.app/leadborad')
         .then(response => response.json())
         .then(data => {
             users = data;

@@ -763,7 +763,7 @@ document.addEventListener('click', documentClickHandler);
 
 async function updateScoreDb() {
     try {
-        const response = await fetch('https://semicolon23-j8cl.onrender.com/updateScore', {
+        const response = await fetch('https://semicolon.vercel.app/updateScore', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

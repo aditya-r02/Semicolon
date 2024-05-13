@@ -488,7 +488,7 @@ let userData;
 
 // fetchUserData();
 async function fetchUserData() {
-    await fetch('https://semicolon23-j8cl.onrender.com/graphData')
+    await fetch('https://semicolon.vercel.app/graphData')
         .then(response => response.json())
         .then(data => {
             userData = data;
@@ -666,7 +666,7 @@ function drawChart() {
 
 async function updateMsg() {
     try {
-        const response = await fetch('https://semicolon23-j8cl.onrender.com/updateMsg', {
+        const response = await fetch('https://semicolon.vercel.app/updateMsg', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -686,7 +686,7 @@ async function updateMsg() {
 
 async function updateName() {
     try {
-        const response = await fetch('https://semicolon23-j8cl.onrender.com/updateName', {
+        const response = await fetch('https://semicolon.vercel.app/updateName', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -706,7 +706,7 @@ async function updateName() {
 
 async function updatePhoto() {
     try {
-        const response = await fetch('https://semicolon23-j8cl.onrender.com/updatePhoto', {
+        const response = await fetch('https://semicolon.vercel.app/updatePhoto', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -199,7 +199,7 @@ let data;
 fetchData();
 async function fetchData() {
   try {
-    const response = await fetch('https://semicolon23-j8cl.onrender.com/dog');
+    const response = await fetch('https://semicolon.vercel.app/dog');
     data = (await response.json());
   } catch (error) {
     // console.error('There was a problem with the fetch operation:', error);
@@ -327,7 +327,7 @@ function showTopics() {
 topics.addEventListener('click', async (event) => {
   if (event.target.parentNode.classList.contains('card')) {
     let topicNo = event.target.parentNode.getAttribute('value');
-    await fetch('https://semicolon23-j8cl.onrender.com/showPost', {
+    await fetch('https://semicolon.vercel.app/showPost', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -338,6 +338,6 @@ topics.addEventListener('click', async (event) => {
         unitIndex: unitNo,
       })
     })
-    window.location.href = 'https://semicolon23-j8cl.onrender.com/show';
+    window.location.href = 'https://semicolon.vercel.app/show';
   }
 })

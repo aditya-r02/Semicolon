@@ -137,7 +137,7 @@ function getAppliedTheme() {
 fetchData();
 async function fetchData() {
     try {
-        const response = await fetch('https://semicolon23-j8cl.onrender.com/sendNotes');
+        const response = await fetch('https://semicolon.vercel.app/sendNotes');
         const obj = (await response.json());
         topic = obj.topicIndex;
         unit = obj.unitIndex;
@@ -219,7 +219,7 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
 
 
 testLink.addEventListener('click', async () => {
-    await fetch('https://semicolon23-j8cl.onrender.com/topicType', {
+    await fetch('https://semicolon.vercel.app/topicType', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -228,5 +228,5 @@ testLink.addEventListener('click', async () => {
             content: data[0].sem[0].subjects[sub].units[unit].topics[topic].content
         })
     })
-    window.location.href = 'https://semicolon23-j8cl.onrender.com/topicTest';
+    window.location.href = 'https://semicolon.vercel.app/topicTest';
 })
