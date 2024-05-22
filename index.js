@@ -21,7 +21,7 @@ app.use("/scripts", express.static(__dirname + "/scripts"));
 app.use("/images", express.static(__dirname + "/images"));
 
 mongoose.connect("mongodb+srv://adityarana2k20:xelNy2NPZCkz1sFD@cluster0.62prapf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-
+console.log("Mongo connected")
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
@@ -29,34 +29,6 @@ app.use(cookieParser());
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
-
-const Sem1 = new mongoose.Schema({
-  sem:
-    [
-      {
-        subjects:
-          [{
-            subjectName: String,
-            units:
-              [
-                {
-                  unitName: String,
-                  topics:
-                    [
-                      {
-                        name: String,
-                        content: String,
-                      },
-                    ]
-                },
-              ]
-          },
-          ]
-      },
-    ]
-})
-
-const Sem1Notes = mongoose.model('Sem1Notes', Sem1);
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -155,8 +127,10 @@ app.post('/everything', async (req, res) => {
 })
 
 async function fetchData() {
-  data = await Sem1Notes.find({});
+  //data = await Sem1Notes.find({});
+  console.log("hello")
   radata = await RandomData.find({});
+  console.log(radata);
 }
 
 app.get('/read', async (req, res) => {
@@ -164,7 +138,8 @@ app.get('/read', async (req, res) => {
 })
 
 app.get('/test', async (req, res) => {
-  const randomNumber = Math.floor(Math.random() * 15);
+  console.log("at test");
+  const randomNumber = Math.floor(Math.random() * 5);
   content = radata[0].data[randomNumber].content;
   res.render('typing', { content, sessionId });
 })
@@ -354,6 +329,6 @@ app.get("/", async (req, res) => {
     await fetchData();
 })
 
-app.listen('8080', () => {
-  // console.log('listening');
+app.listen('8000', () => {
+  console.log('listening');
 })

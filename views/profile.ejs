@@ -41,11 +41,8 @@
         </div>
         <div class="nav-mobile-section">
             <div class="features">
-                <div class="read-link">
-                    <a href="https://semicolon23-j8cl.onrender.com/read" class="grow-link">READ</a>
-                </div>
                 <div class="test-link">
-                    <a href="https://semicolon23-j8cl.onrender.com/test" class="grow-link">TEST</a>
+                    <a href="/test" class="grow-link">TEST</a>
                 </div>
             </div>
             <div class="about">
@@ -56,12 +53,12 @@
                     <a href="#" class="border-link" onclick="return false;"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
                 <div class="github-link-icon">
-                    <a href="https://github.com/Amanjot-001/Semicolon" class="border-link"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/aditya-r02/Semicolon" class="border-link"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
             <div class="profile">
                 <div class="profile-text">
-                    <a href="https://semicolon23-j8cl.onrender.com/logout" class="grow-link">LOGOUT</a>
+                    <a href="/logout" class="grow-link">LOGOUT</a>
                 </div>
             </div>
         </div>
@@ -119,25 +116,7 @@
                 </div>
             </div>
         </div>
-        <div class="review">
-            <p class="heading"><strong>Leave a review:</strong></p>
-            <div class="text-area">
-                <p>
-                    <% if (!userData.message) { %>
-                        Max 100 chars long
-                        <% } else { %>
-                            <%= userData.message %>
-                                <% } %>
-                </p>
-                <div class="thanks-msg hidden">
-                    <p>Thank You for your Feedback!</p>
-                </div>
-            </div>
-            <div class="btns">
-                <a class="edit" href="#" onclick="return false;">Edit</a>
-                <a class="submit" href="#" onclick="return false;">Submit</a>
-            </div>
-        </div>
+        
         <div class="graph">
             <div id="chart_div"></div>
         </div>

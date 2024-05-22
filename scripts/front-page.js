@@ -151,62 +151,62 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
     nav.dataset.toggled = "false";
 }
 
-document.addEventListener('click', (event) => {
-    const clickedElement = event.target;
-    if (clickedElement.tagName.toLowerCase() !== 'button' &&
-        clickedElement.tagName.toLowerCase() !== 'a' &&
-        clickedElement.tagName.toLowerCase() !== 'li' &&
-        clickedElement.tagName.toLowerCase() !== 'p' &&
-        clickedElement.tagName.toLowerCase() !== 'input' &&
-        clickedElement.tagName.toLowerCase() !== 'i' &&
-        clickedElement.tagName.toLowerCase() !== 'span' &&
-        clickedElement.tagName.toLowerCase() !== 'h1' &&
-        !clickedElement.classList.contains('image') &&
-        clickedElement.tagName.toLowerCase() !== 'img' &&
-        !clickedElement.classList.contains('left-btn') &&
-        !clickedElement.classList.contains('right-btn') &&
-        !clickedElement.closest('.image')) {
+// document.addEventListener('click', (event) => {
+//     const clickedElement = event.target;
+//     if (clickedElement.tagName.toLowerCase() !== 'button' &&
+//         clickedElement.tagName.toLowerCase() !== 'a' &&
+//         clickedElement.tagName.toLowerCase() !== 'li' &&
+//         clickedElement.tagName.toLowerCase() !== 'p' &&
+//         clickedElement.tagName.toLowerCase() !== 'input' &&
+//         clickedElement.tagName.toLowerCase() !== 'i' &&
+//         clickedElement.tagName.toLowerCase() !== 'span' &&
+//         clickedElement.tagName.toLowerCase() !== 'h1' &&
+//         !clickedElement.classList.contains('image') &&
+//         clickedElement.tagName.toLowerCase() !== 'img' &&
+//         !clickedElement.classList.contains('left-btn') &&
+//         !clickedElement.classList.contains('right-btn') &&
+//         !clickedElement.closest('.image')) {
 
-        if (!mouseCaret.classList.contains('clicked'))
-            applyNextColorTheme();
-    }
+//         if (!mouseCaret.classList.contains('clicked'))
+//             applyNextColorTheme();
+//     }
 
-    if (clickedElement.tagName.toLowerCase() !== 'button' &&
-        clickedElement.tagName.toLowerCase() !== 'a' &&
-        clickedElement.tagName.toLowerCase() !== 'li' &&
-        clickedElement.tagName.toLowerCase() !== 'p' &&
-        clickedElement.tagName.toLowerCase() !== 'input' &&
-        clickedElement.tagName.toLowerCase() !== 'i' &&
-        clickedElement.tagName.toLowerCase() !== 'span' &&
-        clickedElement.tagName.toLowerCase() !== 'h1' &&
-        !clickedElement.classList.contains('image') &&
-        clickedElement.tagName.toLowerCase() !== 'img' &&
-        !clickedElement.classList.contains('left-btn') &&
-        !clickedElement.classList.contains('right-btn') &&
-        !clickedElement.closest('.image')) {
+//     if (clickedElement.tagName.toLowerCase() !== 'button' &&
+//         clickedElement.tagName.toLowerCase() !== 'a' &&
+//         clickedElement.tagName.toLowerCase() !== 'li' &&
+//         clickedElement.tagName.toLowerCase() !== 'p' &&
+//         clickedElement.tagName.toLowerCase() !== 'input' &&
+//         clickedElement.tagName.toLowerCase() !== 'i' &&
+//         clickedElement.tagName.toLowerCase() !== 'span' &&
+//         clickedElement.tagName.toLowerCase() !== 'h1' &&
+//         !clickedElement.classList.contains('image') &&
+//         clickedElement.tagName.toLowerCase() !== 'img' &&
+//         !clickedElement.classList.contains('left-btn') &&
+//         !clickedElement.classList.contains('right-btn') &&
+//         !clickedElement.closest('.image')) {
 
-        mouseCaret.classList.add('clicked');
-        setTimeout(function () {
-            mouseCaret.classList.remove('clicked');
-        }, 800);
-    }
-});
+//         mouseCaret.classList.add('clicked');
+//         setTimeout(function () {
+//             mouseCaret.classList.remove('clicked');
+//         }, 800);
+//     }
+// });
 
-function applyNextColorTheme() {
-    var themes = ['theme1', 'theme2', 'theme3'];
-    var currentTheme = getAppliedTheme();
-    document.documentElement.classList.remove(currentTheme);
-    var currentIndex = themes.indexOf(currentTheme);
-    var nextIndex = (currentIndex + 1) % themes.length;
-    var nextTheme = themes[nextIndex];
-    document.documentElement.classList.add(nextTheme);
-}
+// function applyNextColorTheme() {
+//     var themes = ['theme1', 'theme2', 'theme3'];
+//     var currentTheme = getAppliedTheme();
+//     document.documentElement.classList.remove(currentTheme);
+//     var currentIndex = themes.indexOf(currentTheme);
+//     var nextIndex = (currentIndex + 1) % themes.length;
+//     var nextTheme = themes[nextIndex];
+//     document.documentElement.classList.add(nextTheme);
+// }
 
-function getAppliedTheme() {
-    var themes = ['theme1', 'theme2', 'theme3'];
-    var appliedTheme = themes.find(theme => document.documentElement.classList.contains(theme));
-    return appliedTheme;
-}
+// function getAppliedTheme() {
+//     var themes = ['theme1', 'theme2', 'theme3'];
+//     var appliedTheme = themes.find(theme => document.documentElement.classList.contains(theme));
+//     return appliedTheme;
+// }
 
 fetchEverything();
 async function fetchEverything() {

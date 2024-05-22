@@ -103,49 +103,6 @@ input.addEventListener("keyup", function (event) {
     }
 });
 
-document.addEventListener('click', (event) => {
-    const clickedElement = event.target;
-    if (clickedElement.tagName.toLowerCase() !== 'button' &&
-        clickedElement.tagName.toLowerCase() !== 'a' &&
-        clickedElement.tagName.toLowerCase() !== 'li' &&
-        clickedElement.tagName.toLowerCase() !== 'p' &&
-        clickedElement.tagName.toLowerCase() !== 'input' &&
-        clickedElement.tagName.toLowerCase() !== 'i' &&
-        clickedElement.tagName.toLowerCase() !== 'span' &&
-        !clickedElement.classList.contains('typing-area') &&
-        !clickedElement.classList.contains('focus-popup-wrapper') &&
-        !clickedElement.classList.contains('heading') &&
-        !clickedElement.closest('.popups')) {
-
-        if (!mouseCaret.classList.contains('clicked'))
-            applyNextColorTheme();
-    }
-
-    if (clickedElement.tagName.toLowerCase() !== 'button' &&
-        clickedElement.tagName.toLowerCase() !== 'a' &&
-        clickedElement.tagName.toLowerCase() !== 'li' &&
-        clickedElement.tagName.toLowerCase() !== 'p' &&
-        clickedElement.tagName.toLowerCase() !== 'input' &&
-        clickedElement.tagName.toLowerCase() !== 'i' &&
-        clickedElement.tagName.toLowerCase() !== 'span' &&
-        !clickedElement.classList.contains('typing-area') &&
-        !clickedElement.classList.contains('focus-popup-wrapper') &&
-        !clickedElement.classList.contains('heading') &&
-        !clickedElement.closest('.popups')) {
-
-        mouseCaret.classList.add('clicked');
-        setTimeout(function () {
-            mouseCaret.classList.remove('clicked');
-        }, 800);
-    }
-});
-
-document.addEventListener('click', (event) => {
-    const reloadIcon = event.target.closest('#after-text span i');
-    if (reloadIcon) {
-        window.location.reload();
-    }
-});
 
 window.addEventListener('mousemove', (e) => {
     mouseCaret.style.top = e.pageY + 'px';
@@ -220,21 +177,7 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
     nav.dataset.toggled = "false";
 }
 
-function applyNextColorTheme() {
-    var themes = ['theme1', 'theme2', 'theme3'];
-    var currentTheme = getAppliedTheme();
-    document.documentElement.classList.remove(currentTheme);
-    var currentIndex = themes.indexOf(currentTheme);
-    var nextIndex = (currentIndex + 1) % themes.length;
-    var nextTheme = themes[nextIndex];
-    document.documentElement.classList.add(nextTheme);
-}
 
-function getAppliedTheme() {
-    var themes = ['theme1', 'theme2', 'theme3'];
-    var appliedTheme = themes.find(theme => document.documentElement.classList.contains(theme));
-    return appliedTheme;
-}
 
 makeHtml(originalString);
 function makeHtml(originalString) {

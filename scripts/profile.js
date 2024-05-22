@@ -450,39 +450,7 @@ textMsg.addEventListener('input', () => {
     }
 })
 
-document.addEventListener('click', (e) => {
-    if (e.target !== edit && e.target !== textArea && e.target !== textMsg) {
-        textMsg.blur();
-        textMsg.removeAttribute('contenteditable', 'true');
-        if (textMsg.textContent === '')
-            textMsg.textContent = 'Max 100 chars long';
-        edit.style.color = 'var(--main-text-color)';
-    }
 
-    if (e.target !== nameEditBtn && e.target !== userName) {
-        userName.blur();
-        userName.removeAttribute('contenteditable', 'true');
-        nameEditBtn.style.color = 'var(--main-text-color)';
-        nameEditBtn.classList.add('fa-pen-to-square');
-        nameEditBtn.classList.remove('fa-check');
-    }
-})
-
-function applyNextColorTheme() {
-    var themes = ['theme1', 'theme2', 'theme3'];
-    var currentTheme = getAppliedTheme();
-    document.documentElement.classList.remove(currentTheme);
-    var currentIndex = themes.indexOf(currentTheme);
-    var nextIndex = (currentIndex + 1) % themes.length;
-    var nextTheme = themes[nextIndex];
-    document.documentElement.classList.add(nextTheme);
-}
-
-function getAppliedTheme() {
-    var themes = ['theme1', 'theme2', 'theme3'];
-    var appliedTheme = themes.find(theme => document.documentElement.classList.contains(theme));
-    return appliedTheme;
-}
 
 let userData;
 
